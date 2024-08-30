@@ -9,11 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.tbiazin.domain.Movie;
-import br.com.tbiazin.repository.MovieRepository;
+import br.com.tbiazin.repository.IMovieRepository;
 import br.com.tbiazin.service.MovieService;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @SpringBootTest(properties = "spring.datasource.url=jdbc:postgresql://localhost:5432/postgres")
 @Transactional
@@ -23,7 +25,7 @@ class MovieServiceTests {
     private MovieService movieService;
 
     @Autowired
-    private MovieRepository movieRepository;
+    private IMovieRepository movieRepository;
 
     private Movie testMovie;
 
@@ -41,7 +43,19 @@ class MovieServiceTests {
         testMovie.setAdult(false);
         testMovie.setVideo("https://example.com/video.mp4");
         testMovie.setVoteCount(100);
-        testMovie.setGenreIds("Action,Drama"); 
+        
+        List<Integer> genreIds = Arrays.stream("Action,Drama".split(","))
+                .map(this::mapGenreToId)
+                .collect(Collectors.toList());
+        testMovie.setGenreIds(genreIds);
+    }
+
+    private Integer mapGenreToId(String genreName) {
+        return switch (genreName) {
+            case "Action" -> 1;
+            case "Drama" -> 2;
+            default -> 0;
+        };
     }
 
     @Test
@@ -80,7 +94,7 @@ class MovieServiceTests {
         Movie savedMovie = movieService.saveFavorite(testMovie);
 
         savedMovie.setTitle("B13 Updated");
-        Movie updatedMovie = movieService.saveFavorite(savedMovie);
+        Movie updatedMovie = movieService.updateMovie(savedMovie.getId(), savedMovie);
 
         assertThat(updatedMovie).isNotNull();
         assertThat(updatedMovie.getTitle()).isEqualTo("B13 Updated");
@@ -90,7 +104,7 @@ class MovieServiceTests {
     void testDeleteMovie() {
         Movie savedMovie = movieService.saveFavorite(testMovie);
 
-        movieRepository.deleteById(savedMovie.getId());
+        movieService.deleteMovie(savedMovie.getId());
 
         Optional<Movie> foundMovieOptional = movieRepository.findById(savedMovie.getId());
         assertThat(foundMovieOptional).isEmpty();
@@ -110,7 +124,10 @@ class MovieServiceTests {
         movie1.setAdult(false);
         movie1.setVideo("https://example.com/video.mp4");
         movie1.setVoteCount(100);
-        movie1.setGenreIds("Action,Drama"); 
+        List<Integer> genreIds1 = Arrays.stream("Action,Drama".split(","))
+                .map(this::mapGenreToId)
+                .collect(Collectors.toList());
+        movie1.setGenreIds(genreIds1);
 
         Movie movie2 = new Movie();
         movie2.setTitle("Saving Private Ryan");
@@ -124,7 +141,10 @@ class MovieServiceTests {
         movie2.setAdult(false);
         movie2.setVideo("https://example.com/video.mp4");
         movie2.setVoteCount(100);
-        movie2.setGenreIds("Action,Drama"); 
+        List<Integer> genreIds2 = Arrays.stream("Action,Drama".split(","))
+                .map(this::mapGenreToId)
+                .collect(Collectors.toList());
+        movie2.setGenreIds(genreIds2);
 
         movieService.saveFavorite(movie1);
         movieService.saveFavorite(movie2);

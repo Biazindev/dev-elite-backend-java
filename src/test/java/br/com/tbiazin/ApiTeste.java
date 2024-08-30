@@ -7,6 +7,7 @@ import static org.springframework.test.web.client.match.MockRestRequestMatchers.
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ import org.springframework.web.client.RestTemplate;
 
 import br.com.tbiazin.domain.Movie;
 import br.com.tbiazin.dto.MovieDTO;
-import br.com.tbiazin.repository.MovieRepository;
+import br.com.tbiazin.repository.IMovieRepository;
 import br.com.tbiazin.service.MovieService;
 
 @SpringBootTest
@@ -31,7 +32,7 @@ public class ApiTeste {
     private RestTemplate restTemplate;
 
     @MockBean
-    private MovieRepository movieRepository;
+    private IMovieRepository movieRepository;
 
     private MockRestServiceServer mockServer;
 
@@ -46,12 +47,12 @@ public class ApiTeste {
         mockServer.expect(requestTo("https://api.themoviedb.org/3/search/movie?api_key=262ceba5b8f2ec3f703e5666075b2a26&query=Inception"))
                   .andRespond(withSuccess(jsonResponse, APPLICATION_JSON));
 
-        List<MovieDTO> movies = movieService.searchMovies("Inception");
+        CompletableFuture<List<MovieDTO>> movies = movieService.searchMoviesAsync("Inception");
 
         assertThat(movies).hasSize(1);
-        assertThat(movies.get(0).getTitle()).isEqualTo("Inception");
-        assertThat(movies.get(0).getTmdbId()).isEqualTo("12345");
-        assertThat(movies.get(0).getOverview()).isEqualTo("A mind-bending thriller");
-        assertThat(movies.get(0).getRating()).isEqualTo(8.8);
+        assertThat(movies.getNow(0).getTitle()).isEqualTo("Inception");
+        assertThat(movies.getNow(0).getTmdbId()).isEqualTo("12345");
+        assertThat(movies.getNow(0).getOverview()).isEqualTo("A mind-bending thriller");
+        assertThat(movies.getNow(0).getRating()).isEqualTo(8.8);
     }
 }

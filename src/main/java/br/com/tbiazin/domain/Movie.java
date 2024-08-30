@@ -1,6 +1,9 @@
 package br.com.tbiazin.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,7 +26,7 @@ public class Movie {
     @Column(name = "tmdb_id", nullable = false, unique = true)
     private String tmdbId;
 
-    @Column(name = "overview", nullable = true)
+    @Column(name = "overview", length = 5000, nullable = true)
     private String overview;
 
     @Column(name = "rating", nullable = true)
@@ -32,7 +35,7 @@ public class Movie {
     @Column(name = "thumbnail", nullable = true)
     private String thumbnail;
 
-    @Column(name = "backdrop_path", nullable = true)
+    @Column(name = "backdrop_path", length = 1000, nullable = true)
     private String backdropPath;
 
     @Column(name = "release_date", nullable = true)
@@ -45,11 +48,16 @@ public class Movie {
     private Boolean adult;
 
     @Column(name = "video", nullable = true)
-    private String video;
+    private Boolean video;
 
     @Column(name = "vote_count", nullable = true)
     private Integer voteCount;
+    
+    @Column(name = "is_favorite", nullable = false)
+    private Boolean isFavorite = false;
 
     @Column(name = "genre_ids", nullable = true)
-    private String genreIds;
+    @ElementCollection
+    private List<Integer> genreIds;
+    
 }

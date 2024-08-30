@@ -2,6 +2,13 @@ package br.com.tbiazin;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,7 +38,18 @@ class MoviesListApplicationTests {
         movie.setAdult(false);
         movie.setVideo("https://example.com/video.mp4");
         movie.setVoteCount(100);
-        movie.setGenreIds("Action,Drama"); 
+
+        Map<String, Integer> genreMap = new HashMap<>();
+        genreMap.put("Action", 28);
+        genreMap.put("Drama", 18);
+
+        String genreString = "Action,Drama";
+        List<Integer> genreIds = Arrays.stream(genreString.split(","))
+                .map(String::trim)
+                .map(genreMap::get)
+                .collect(Collectors.toList());
+
+        movie.setGenreIds(genreIds); 
 
         movieService.saveFavorite(movie);
 
@@ -45,7 +63,7 @@ class MoviesListApplicationTests {
 
         assertThat(savedMovie).isNotNull();
         assertThat(savedMovie.getTitle()).isEqualTo("B13");
-        assertThat(savedMovie.getTmdbId()).isEqualTo("12345");
+        assertThat(savedMovie.getTmdbId()).isEqualTo("52616261");
         assertThat(savedMovie.getOverview()).isEqualTo("the new day");
         assertThat(savedMovie.getRating()).isEqualTo(8.8);
         assertThat(savedMovie.getThumbnail()).isEqualTo("https://example.com/thumbnail.jpg");
@@ -55,6 +73,19 @@ class MoviesListApplicationTests {
         assertThat(savedMovie.getAdult()).isFalse();
         assertThat(savedMovie.getVideo()).isEqualTo("https://example.com/video.mp4");
         assertThat(savedMovie.getVoteCount()).isEqualTo(100);
-        assertThat(savedMovie.getGenreIds()).isEqualTo("Action,Drama");
+        assertThat(savedMovie.getIsFavorite()).isTrue();
+        assertThat(savedMovie.getGenreIds()).isEqualTo(genreIds);
+    }
+    
+    public void DeleteMovieTeste() {
+		Movie savedMovie = movieService.saveFavorite(testMovie);
+
+        assertThat(savedMovie).isNotNull();
+        assertThat(savedMovie.getId()).isNotNull();
+
+        movieService.deleteMovie(savedMovie.getId());
+
+		Optional<Movie> foundMovieOptional = movieRepository.findById(savedMovie.getId());
+        assertThat(foundMovieOptional).isEmpty();
     }
 }

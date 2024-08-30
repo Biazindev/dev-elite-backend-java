@@ -9,6 +9,16 @@ import br.com.tbiazin.domain.Movie;
 import java.util.List;
 
 @Repository
-public interface MovieRepository extends JpaRepository<Movie, Long> {
+public interface IMovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findByTitleContaining(String title);
+
+	void deleteByTmdbId(Long id);
+
+	boolean existsByTmdbId(Long id);
+
+	Movie findByTmdbId(String tmdbId);
+
+	Movie findByTmdbId(Long tmdbId);
+
+	List<Movie> findByTitleContainingIgnoreCase(String query);
 }
