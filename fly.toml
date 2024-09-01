@@ -1,0 +1,12 @@
+app = "movieslist-floral-pond-4338"
+
+[build]
+  # Use a Dockerfile in the project root to build the app
+  image = "your-docker-image"
+
+[env]
+  DATABASE_URL = "postgres://movieslist_floral_pond_4338:1LOLkDqX9APf9cH@movieslist-db.flycast:5432/movieslist_floral_pond_4338?sslmode=disable"
+  REDIS_URL = "redis://default:16d1bf5b344f4e8db78ab7cab7508ffb@fly-movieslist-floral-pond-4338-redis.upstash.io:6379"
+
+[deploy]
+  release_command = "java -jar moviesList.jar"
