@@ -20,6 +20,11 @@ public class MovieController {
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
     }
+    
+    @GetMapping("/results")
+    public CompletableFuture<List<MovieDTO>> getMoviesByName(@RequestParam String query) {
+        return searchMovies(query);
+    }
 
     @GetMapping("/search")
     public CompletableFuture<List<MovieDTO>> searchMovies(@RequestParam String query) {

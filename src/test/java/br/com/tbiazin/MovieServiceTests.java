@@ -41,7 +41,7 @@ class MovieServiceTests {
         testMovie.setReleaseDate("2024-01-01");
         testMovie.setPopularity(80.5);
         testMovie.setAdult(false);
-        testMovie.setVideo("https://example.com/video.mp4");
+        testMovie.setVideo(false);
         testMovie.setVoteCount(100);
         
         List<Integer> genreIds = Arrays.stream("Action,Drama".split(","))
@@ -122,7 +122,7 @@ class MovieServiceTests {
         movie1.setReleaseDate("2024-01-01");
         movie1.setPopularity(80.5);
         movie1.setAdult(false);
-        movie1.setVideo("https://example.com/video.mp4");
+        movie1.setVideo(false);
         movie1.setVoteCount(100);
         List<Integer> genreIds1 = Arrays.stream("Action,Drama".split(","))
                 .map(this::mapGenreToId)
@@ -139,7 +139,7 @@ class MovieServiceTests {
         movie2.setReleaseDate("2024-01-01");
         movie2.setPopularity(80.5);
         movie2.setAdult(false);
-        movie2.setVideo("https://example.com/video.mp4");
+        movie2.setVideo(false);
         movie2.setVoteCount(100);
         List<Integer> genreIds2 = Arrays.stream("Action,Drama".split(","))
                 .map(this::mapGenreToId)
