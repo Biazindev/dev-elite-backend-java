@@ -1,4 +1,4 @@
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.8.6-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
@@ -12,6 +12,6 @@ WORKDIR /app
 
 EXPOSE 8080
 
-COPY --from=build /app/target/moviesList-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/moviesList-1.0.0.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
