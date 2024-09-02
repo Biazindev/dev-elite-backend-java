@@ -33,41 +33,28 @@ Passos para Configuração<br>
 # **Clone o Repositório**:<br>
 **git clone** https://github.com/Biazindev/dev-elite-backend-java.git <br><br>
 
-**Configurar o Banco de Dados**:<br><br>
+#**Configurar o Banco de Dados**:<br><br>
 
-# **Crie um banco de dados Postgres para a aplicação**.<br>
+**Crie um banco de dados Postgres para a aplicação**.<br>
 
-# **Atualize as credenciais do banco no arquivo application.properties**:<br>
-
-**properties**<br>
-**Copiar código**<br>
+**Atualize as credenciais do banco no arquivo application.properties**:<br>
 spring.datasource.url=jdbc:postgresql://localhost:5432/seu-banco<br>
 spring.datasource.username=seu-usuario<br>
 spring.datasource.password=sua-senha<br>
 spring.jpa.hibernate.ddl-auto=update<br>
 
 # **Configurar a API TMDb**:<br>
-<br>
-<br>
  Adicione a chave da API TMDb no application.properties:
-
-**properties**<br>
-**Copiar código**<br>
 tmdb.api.key=sua-chave-tmdb<br>
 
 # **Rodar o Projeto**:<br>
-
 **Compile e rode o projeto com Maven**:<br><br>
-
-**bash**<br>
-**Copiar código**<br>
 mvn clean install<br>
 mvn spring-boot:run<br>
 **A aplicação estará disponível em** http://localhost:8080.<br><br>
 
 # **Endpoints Principais**<br><br>
-**Buscar Filmes**:<br>
-
+Buscar Filmes
 GET /api/movies?query={nome-do-filme} - Busca filmes pelo nome.<br>
 Gerenciar Favoritos:<br>
 
