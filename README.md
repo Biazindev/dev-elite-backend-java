@@ -12,7 +12,7 @@ A aplicação está hospedada na Render e utiliza um banco de dados Postgres.
 **API TMDb**: API externa utilizada para obter informações detalhadas sobre filmes.<br>
 **Render**: Plataforma de hospedagem onde o backend está implementado.<br>
 # **Funcionalidades**<br>
-**Buscar Filmes**: A aplicação consome dados da API TMDb para buscar filmes, exibir detalhes e permitir que o usuário adicione filmes aos seus favoritos.<br><br>
+**Buscar Filmes**: A aplicação consome dados da API TMDb para buscar filmes, exibir detalhes e permitir que o usuário adicione e remova filmes dos seus favoritos.<br><br>
 
 # **Gerenciar Favoritos**:<br>
 
