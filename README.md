@@ -16,10 +16,10 @@ A aplicação está hospedada na Render e utiliza um banco de dados Postgres.
 
 # **Gerenciar Favoritos**:<br>
 
-**Salvar Favoritos** Os usuários podem adicionar filmes à sua lista de favoritos. Os favoritos são salvos no banco de dados Postgres.<br>
+**Salvar Favoritos:** Os usuários podem adicionar filmes à sua lista de favoritos. Os favoritos são salvos no banco de dados Postgres.<br>
 **Apagar Favoritos**: Os usuários podem remover filmes da lista de favoritos.<br>
 **Listar Favoritos**: A aplicação permite que os usuários vejam todos os filmes que foram adicionados como favoritos.<br>
-# **Compartilhar Lista de Favoritos**:<br>
+**Compartilhar Lista de Favoritos**: Aplicação permite que o usuario compartilhe sua lista de favoritos<br>
 
 **A aplicação fornece uma URL fixa** (https://dev-elite-front.vercel.app/favorites) que pode ser compartilhada para acessar a lista de filmes favoritos diretamente no frontend.<br>
 # **Como Configurar e Rodar a Aplicação**<br>
