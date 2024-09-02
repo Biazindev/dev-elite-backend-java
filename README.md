@@ -8,7 +8,7 @@ A aplicação está hospedada na Render e utiliza um banco de dados Postgres.
 **Spring Boot**: Framework para desenvolvimento rápido e fácil de aplicações Java, com suporte a REST APIs.<br>
 **Hibernate**: Framework de mapeamento objeto-relacional usado para interagir com o banco de dados.<br>
 **PostgreSQL**: Banco de dados relacional usado para armazenar informações sobre filmes e usuários.<br>
-**JUnit:** aplicação feita e testada para evitar bugs e erros.
+**JUnit:** aplicação feita e testada para evitar bugs e erros.<br>
 **API TMDb**: API externa utilizada para obter informações detalhadas sobre filmes.<br>
 **Render**: Plataforma de hospedagem onde o backend está implementado.<br>
 # **Funcionalidades**<br>
