@@ -31,8 +31,8 @@ Este é o backend de uma aplicação de filmes desenvolvida em Java usando Sprin
 
 # **bash**
 **Copiar código**
-**git clone** https://github.com/Biazindev/dev-elite-backend-java.git
-**cd sua-aplicacao**
+**git clone** https://github.com/Biazindev/dev-elite-backend-java.git <br>
+
 **Configurar o Banco de Dados**:
 
 # **Crie um banco de dados Postgres para a aplicação**.
