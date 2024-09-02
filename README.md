@@ -71,7 +71,10 @@ Configure o build command como ./mvnw clean install e o start command como java 
 Defina as variáveis de ambiente para conectar com o banco de dados e API TMDb.<br>
 
 # **Banco de Dados Postgres:**<br>
-
 Adicione um banco de dados Postgres na Render e configure as variáveis de ambiente conforme necessário.<br>
+
+# **Deploy Render / Vercel**<br>
 **URL deploy backend Render**: https://dev-elite-backend-java.onrender.com<br>
 **URL interface frontend vercel:** https://dev-elite-front.vercel.app/<br>
+**URL interface frontend Render:** https://dev-elite-front.onrender.com/
+
