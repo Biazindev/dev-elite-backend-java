@@ -131,10 +131,9 @@ public class MovieService {
 
     public String shareFavoritesLink() {
         List<Movie> favorites = movieRepository.findAll();
-        return "https://dev-elite-backend-java.onrender.com/share?movies=" +
+        return "https://dev-elite-backend-java.onrender.com/api/movies/search?query=" +
                 favorites.stream()
-                        .map(Movie::getTmdbId)
-                        .collect(Collectors.joining(","));
+                        .map(Movie::getTmdbId);
     }
 
     public void deleteMovie(Long id) {
