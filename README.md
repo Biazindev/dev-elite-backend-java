@@ -21,16 +21,13 @@ Este é o backend de uma aplicação de filmes desenvolvida em Java usando Sprin
 **A aplicação fornece uma URL fixa** (https://dev-elite-front.vercel.app/favorites) que pode ser compartilhada para acessar a lista de filmes favoritos diretamente no frontend.<br>
 # **Como Configurar e Rodar a Aplicação**<br>
 # **Pré-requisitos**<br>
-**Java 17 ou superior instalado**.<br>
-**Maven para gerenciar dependências e construir o projeto**.<br>
-**PostgreSQL para o banco de dados**.<br>
-**Conta na Render para deploy, ou execute localmente**.<br>
-**Credenciais da API TMDb para acessar os dados dos filmes**.<br>
-**Passos para Configuração**<br>
-**Clone o Repositório**:<br>
-
-# **bash**<br>
-**Copiar código**<br>
+Java 17 ou superior instalado.<br>
+Maven para gerenciar dependências e construir o projeto.<br>
+PostgreSQL para o banco de dados.<br>
+Conta na Render para deploy, ou execute localmente.<br>
+Credenciais da API TMDb para acessar os dados dos filmes.<br>
+Passos para Configuração<br>
+# **Clone o Repositório**:<br>
 **git clone** https://github.com/Biazindev/dev-elite-backend-java.git <br><br>
 
 **Configurar o Banco de Dados**:<br><br>
@@ -49,7 +46,7 @@ spring.jpa.hibernate.ddl-auto=update<br>
 # **Configurar a API TMDb**:<br>
 <br>
 <br>
- **Adicione a chave da API TMDb no application.properties:**
+ Adicione a chave da API TMDb no application.properties:
 
 **properties**<br>
 **Copiar código**<br>
