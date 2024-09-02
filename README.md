@@ -32,7 +32,7 @@ Credenciais da API TMDb para acessar os dados dos filmes.<br>
 
 # **Passos para Configuração**<br>
 Clone o Repositório:<br>
-git clone https://github.com/Biazindev/dev-elite-backend-java.git <br><br>
+git clone https://github.com/Biazindev/dev-elite-backend-java.git <br>
 Configurar o Banco de Dados<br>
 Crie um banco de dados Postgres para a aplicação.<br>
 Atualize as credenciais do banco no arquivo application.properties:<br>
