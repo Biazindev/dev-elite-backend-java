@@ -41,10 +41,10 @@ Este é o backend de uma aplicação de filmes desenvolvida em Java usando Sprin
 
 **properties**
 **Copiar código**
-spring.datasource.url=jdbc:postgresql://localhost:5432/seu-banco
-spring.datasource.username=seu-usuario
-spring.datasource.password=sua-senha
-spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:postgresql://localhost:5432/seu-banco<br>
+spring.datasource.username=seu-usuario<br>
+spring.datasource.password=sua-senha<br>
+spring.jpa.hibernate.ddl-auto=update<br>
 
 # **Configurar a API TMDb**:
 
@@ -87,4 +87,4 @@ Defina as variáveis de ambiente para conectar com o banco de dados e API TMDb.
 Banco de Dados Postgres:
 
 Adicione um banco de dados Postgres na Render e configure as variáveis de ambiente conforme necessário.
-
+**URL deploy Render**: https://dev-elite-backend-java.onrender.com
