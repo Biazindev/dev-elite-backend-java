@@ -31,7 +31,7 @@ Este é o backend de uma aplicação de filmes desenvolvida em Java usando Sprin
 
 # **bash**
 **Copiar código**
-**git clone** https://github.com/seu-usuario/sua-aplicacao.git
+**git clone** https://github.com/Biazindev/dev-elite-backend-java.git
 **cd sua-aplicacao**
 **Configurar o Banco de Dados**:
 
@@ -71,7 +71,7 @@ mvn spring-boot:run
 GET /api/movies?query={nome-do-filme} - Busca filmes pelo nome.
 Gerenciar Favoritos:
 
-POST /api/favorites - Adiciona um filme aos favoritos. Requer um payload JSON com o ID do filme do TMDb.<br>
+POST /api/favorites - Adiciona um filme aos favoritos. Requer o ID do filme do TMDb.<br>
 GET /api/favorites - Lista todos os filmes favoritos.<br>
 DELETE /api/favorites/{id} - Remove um filme dos favoritos pelo ID.<br>
 Compartilhar Favoritos:<br>
@@ -88,4 +88,5 @@ Defina as variáveis de ambiente para conectar com o banco de dados e API TMDb.
 Banco de Dados Postgres:
 
 Adicione um banco de dados Postgres na Render e configure as variáveis de ambiente conforme necessário.
-**URL deploy Render**: https://dev-elite-backend-java.onrender.com
+**URL deploy backend Render**: https://dev-elite-backend-java.onrender.com
+**URL interface frontend vercel:** https://dev-elite-front.vercel.app/
