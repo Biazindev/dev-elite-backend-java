@@ -47,8 +47,9 @@ spring.datasource.password=sua-senha<br>
 spring.jpa.hibernate.ddl-auto=update<br>
 
 # **Configurar a API TMDb**:
-
-# **Adicione a chave da API TMDb no application.properties**:
+<br>
+<br>
+ **Adicione a chave da API TMDb no application.properties:**
 
 **properties**
 **Copiar código**
@@ -70,10 +71,10 @@ mvn spring-boot:run
 GET /api/movies?query={nome-do-filme} - Busca filmes pelo nome.
 Gerenciar Favoritos:
 
-POST /api/favorites - Adiciona um filme aos favoritos. Requer um payload JSON com o ID do filme do TMDb.
-GET /api/favorites - Lista todos os filmes favoritos.
-DELETE /api/favorites/{id} - Remove um filme dos favoritos pelo ID.
-Compartilhar Favoritos:
+POST /api/favorites - Adiciona um filme aos favoritos. Requer um payload JSON com o ID do filme do TMDb.<br>
+GET /api/favorites - Lista todos os filmes favoritos.<br>
+DELETE /api/favorites/{id} - Remove um filme dos favoritos pelo ID.<br>
+Compartilhar Favoritos:<br>
 
 **A URL para acessar a lista de favoritos no frontend é https://dev-elite-front.vercel.app/favorites**.
 
