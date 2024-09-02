@@ -29,15 +29,13 @@ Maven para gerenciar dependências e construir o projeto.<br>
 PostgreSQL para o banco de dados.<br>
 Conta na Render para deploy, ou execute localmente.<br>
 Credenciais da API TMDb para acessar os dados dos filmes.<br>
-Passos para Configuração<br>
-**Clone o Repositório**:<br>
-**git clone** https://github.com/Biazindev/dev-elite-backend-java.git <br><br>
 
-#**Configurar o Banco de Dados**:<br>
-
-**Crie um banco de dados Postgres para a aplicação**.<br>
-
-**Atualize as credenciais do banco no arquivo application.properties**:<br>
+# **Passos para Configuração**<br>
+Clone o Repositório:<br>
+git clone https://github.com/Biazindev/dev-elite-backend-java.git <br><br>
+Configurar o Banco de Dados<br>
+Crie um banco de dados Postgres para a aplicação.<br>
+Atualize as credenciais do banco no arquivo application.properties:<br>
 spring.datasource.url=jdbc:postgresql://localhost:5432/seu-banco<br>
 spring.datasource.username=seu-usuario<br>
 spring.datasource.password=sua-senha<br>
