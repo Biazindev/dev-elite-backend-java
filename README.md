@@ -1,7 +1,7 @@
 # **Backend da Aplicação de Filmes**<br>
 Este é o backend de uma aplicação de filmes desenvolvida em Java usando Spring Boot, Hibernate, e Postgres. A aplicação consome dados da API do The Movie Database (TMDb) e fornece uma interface para um frontend React, permitindo salvar, listar e apagar filmes favoritos.<br>
-A aplicação foi testada com JUnit para previnir erros e bugs<br>
- A aplicação está hospedada na Render e utiliza um banco de dados Postgres.
+Aplicação foi testada com JUnit para previnir erros e bugs.<br>
+A aplicação está hospedada na Render e utiliza um banco de dados Postgres.
 
 # **Tecnologias Utilizadas**<br>
 **Java**: Linguagem de programação principal da aplicação. <br>
