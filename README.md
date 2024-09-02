@@ -55,7 +55,6 @@ mvn spring-boot:run<br>
 Buscar Filmes
 GET /api/movies?query={nome-do-filme} - Busca filmes pelo nome.<br>
 Gerenciar Favoritos:<br>
-
 POST /api/favorites - Adiciona um filme aos favoritos. Requer o ID do filme do TMDb.<br>
 GET /api/favorites - Lista todos os filmes favoritos.<br>
 DELETE /api/favorites/{id} - Remove um filme dos favoritos pelo ID.<br>
