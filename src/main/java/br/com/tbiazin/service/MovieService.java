@@ -131,7 +131,7 @@ public class MovieService {
 
     public String shareFavoritesLink() {
         List<Movie> favorites = movieRepository.findAll();
-        return "https://myapp.com/share?movies=" +
+        return "https://dev-elite-backend-java.onrender.com/share?movies=" +
                 favorites.stream()
                         .map(Movie::getTmdbId)
                         .collect(Collectors.joining(","));

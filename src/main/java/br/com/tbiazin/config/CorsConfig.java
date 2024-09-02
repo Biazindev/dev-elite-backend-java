@@ -15,6 +15,8 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
                         .allowedOrigins("http://localhost:3000")
+                        .allowedOrigins("dev-elite-front.vercel.app")
+                        .allowedOrigins("https://dev-elite-front.onrender.com/")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
             }
